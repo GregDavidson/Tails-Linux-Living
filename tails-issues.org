@@ -120,3 +120,8 @@ Tails is therefore unnecessarily susceptible to crashing when it runs out of
 memory.
 
 This is particularly a problem when running Tails on an older Laptop.
+
+*** PostgrSQL databases don't persist!
+
+The PostgreSQL server install is automatically reinstated, the databases are
+not!  Any role or database created in an earlier Tails session is gone!
