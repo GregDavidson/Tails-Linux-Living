@@ -1,0 +1,16 @@
+* Tails Linux Living /Project Roadmap/
+
+The directory structure shown here appears excessively complex because
+it is only a small subset of the full structure of my actual Gnu/Linux
+home!
+
+** DONE Populate =~= and =~/Desktop=
+
+Tails has a mechanism for populating files under =~= but it is
+somewhat inflexible.  Tails also provides an imnsho excessively long
+=.bashrc= file.  I prefer a more modular solution.  I also prefer to
+manage /everything/ with =git=.
+
+- [[file:Links/HomeLinks/.bash_profile][.bash_profile]]
+- [[file:Links/HomeLinks/.bashrc][.bashrc]]
+- [[file:SW/Config/Bin/restore-dotfiles][restore-dotfiles]]
