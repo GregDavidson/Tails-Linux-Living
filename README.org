@@ -1,0 +1,28 @@
+* Living Well Inside Tails Gnu/Linux
+
+For some time I've wanted to build a Gnu/Linux environment which was
+- Entirely resident on a USB Thumbdrive
+- Secure and private, like Tails
+- Everything I do should persist on the Thumbdrive
+    - projects
+    - packages
+    - customizations
+
+Given the available USB Thumbdrives
+    - 500GB for $50!
+there is no reason why a Gnu/Linux environment living on such can't be
+every bit as good as a normally installed Gnu/Linux environment.
+
+Alas, [[file::tails-issues.org][Tails presents obstacles]] for using it this way.
+
+This project is an attempt to overcome these obstacles!
+
+As I overcome various obstacles to achieving these goals I intend to
+document them here.
+
+/I've been moving fast and am somewhat behind in documenting what I've
+done which works.  Stay tuned./
+
+It's also still not clear if I'm going to be able to fully achieve my
+goals.  An alternative would be to use a more ordinary Gnu/Linux
+distribution in encrypted partitions and add tor, etc.
