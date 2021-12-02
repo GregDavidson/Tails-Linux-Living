@@ -51,3 +51,22 @@ I spend more time in Emacs than in any other application
 ** TODO Get an encrypted swapfile!
 
 I need a cushion when I use lots of processes!
+  
+** DONE Backups and Resilience
+
+Everything important on my Tails thumbdrive is inside of a Git repository and
+gets regularly pushed to a private offsite repository. Yet reconstructing
+everything just from those repositories would still be a pain.
+   
+I have two Tails thumbdrives with identical Tails distributions. The one I use
+regularly has a small form factor, only barely sticking out from its USB slot.
+
+From time to time I backup my little Tails thumbdrive on a larger (and slightly
+cheaper) backup Tails using =rsync= as detailed in
+
+[[https://tails.boum.org/doc/first_steps/persistence/backup/index.en.html][- Tail's Backup Procedure]]
+
+It's possible to do a backup from a non-graphical console if the Graphical
+console is not working, but beware of propagating the cause of the error! It's
+not too hard to just backup what's changed to a subdirectory or to somewhere
+else.
