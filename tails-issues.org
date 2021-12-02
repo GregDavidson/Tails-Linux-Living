@@ -78,7 +78,7 @@ There needs to be a way to initiate that feature manually when it fails.
 
 All that seems possible is to
 - record which software one has just installed
-  - =
+- install it again after a reboot
 
 ** Tails sometimes freezes
 
