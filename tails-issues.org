@@ -1,0 +1,122 @@
+* Tails System and User Administration Issues and Notes
+
+This document is in regards to tails version 4.24.
+  
+** All Internet connections have to go through /tor/
+ 
+Exceptions:
+- the local network
+- The /Unsafe Browser/
+
+Although everything has to go through /tor/ to reach the Internet, tails is not set up to make
+this transparent.
+
+Every program has to be individually configured for /tor/.
+
+*** =torsocks= helper program
+    
+Preface programs with =torsocks=
+
+#+begin_src bash
+  alias emacs='torsocks emacs'
+  alias git='torsocks git'
+  alias curl='torsocks curl'
+  alias wget='torsocks wget'
+#+end_src
+
+Sometimes =torsocks= seems to work
+- perfectly with =git=, =curl=
+- partially with =emacs=
+      - installation of more than one package at a time fails
+      - gets a syntax error
+      - may well be an Emacs networking bug
+      - see below
+- haven't actually tried =wget=
+- not at all for =firefox=
+- haven't tried anything else yet
+
+*** Firefox
+    
+Configuring =firefox= to use /tor/ as a proxy seems to work perfectly.  
+
+[[https://www.tecmint.com/use-tor-network-in-web-browser/][- Configure Tor on Firefox]]
+
+- Go to Preferences → Under Network Settings → Settings
+- under /Configure Proxy Access to the Internet/
+      - select /Manual proxy configuration/
+      - set /SOCKS Host/ to 127.0.0.1 and /Port/ to 9050
+      - check /Proxy DNS when using SOCKS v5/
+      - click OK
+        
+*** Emacs
+
+With =torsocks= Emacs can download one package at a time. Attempts to download
+multiple packages through =list-packages= or starting up /prelude/ fail.
+
+- [[https://www.emacswiki.org/emacs/ErcProxy][Erc Proxy]]
+
+Configuring =emacs= to use /tor/ as a proxy causes /elisp/ complaints. 
+
+The notes suggest also configuring /privoxy/ which I did. It didn't help.
+
+There's some suspicion of an =emacs= bug.
+
+** Additional Software in the Tails Repository is often outdated
+   
+| package    | /tor/ version | latest version | notes                       |
+|------------+---------------+----------------+-----------------------------|
+| postgresql |            11 |             14 | no 12, incomplete 13 and 14 |
+| emacs      |            26 |           27.2 |                             |
+
+** /Automatic Software Installation/ popup unreliable
+
+After installing new software with =synaptic= or =apt= a tails popup is supposed
+to an option of automated installation of the new software on subsequent boots.
+Unfortunately, the popup often fails to appear.
+
+There needs to be a way to initiate that feature manually when it fails.
+
+All that seems possible is to
+- record which software one has just installed
+  - =
+    
+** Tails sometimes freezes
+
+- The GUI still shows 
+- The mouse and keyboard do nothing
+- There's no obvious way to restart the GUI
+      - The Control-Alt-Backspace feature is turned off
+      - Killing the X daemon doesn't do it
+
+A bad dotfile can cause the GUI to freeze 
+- =.local= was doing that on my system
+
+I pointer still shows, a non-graphical console is probably available.
+    - see next section!
+ 
+*** Linux Non-Graphical Console Access
+
+There seem to be only 2 non-graphical consoles.
+ 
+| Key Combination | Switches to                    |
+|-----------------+--------------------------------|
+| Control-Alt-F1  | an empty console               |
+| Control-Alt-F2  | the default Graphical Console  |
+| Control-Alt-F3  | =tty3= non-graphical Console   |
+| Control-Alt-F4  | =tty4= non-graphical Console   |
+
+No console seems to receive system log messages.
+
+**** Best way to safely reboot:
+     
+- Control-Alt-F1 to get to the blank console
+- Control-Alt-Delete to reboot from the console
+** Tails Disables Swap!
+
+Because Tails has replaced =swapon= with a dummy program which does nothing, it
+is unclear how to use a /swapfile/ on the persistent partition.
+
+Tails is therefore unnecessarily susceptible to crashing when it runs out of
+memory.
+
+This is particularly a problem when running Tails on an older Laptop.
