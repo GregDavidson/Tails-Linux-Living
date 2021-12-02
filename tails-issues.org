@@ -1,9 +1,9 @@
 * Tails System and User Administration Issues and Notes
 
 This document is in regards to tails version 4.24.
-  
+
 ** All Internet connections have to go through /tor/
- 
+
 Exceptions:
 - the local network
 - The /Unsafe Browser/
@@ -14,7 +14,7 @@ this transparent.
 Every program has to be individually configured for /tor/.
 
 *** =torsocks= helper program
-    
+
 Preface programs with =torsocks=
 
 #+begin_src bash
@@ -36,8 +36,8 @@ Sometimes =torsocks= seems to work
 - haven't tried anything else yet
 
 *** Firefox
-    
-Configuring =firefox= to use /tor/ as a proxy seems to work perfectly.  
+
+Configuring =firefox= to use /tor/ as a proxy seems to work perfectly.
 
 [[https://www.tecmint.com/use-tor-network-in-web-browser/][- Configure Tor on Firefox]]
 
@@ -47,7 +47,7 @@ Configuring =firefox= to use /tor/ as a proxy seems to work perfectly.
       - set /SOCKS Host/ to 127.0.0.1 and /Port/ to 9050
       - check /Proxy DNS when using SOCKS v5/
       - click OK
-        
+
 *** Emacs
 
 With =torsocks= Emacs can download one package at a time. Attempts to download
@@ -55,18 +55,18 @@ multiple packages through =list-packages= or starting up /prelude/ fail.
 
 - [[https://www.emacswiki.org/emacs/ErcProxy][Erc Proxy]]
 
-Configuring =emacs= to use /tor/ as a proxy causes /elisp/ complaints. 
+Configuring =emacs= to use /tor/ as a proxy causes /elisp/ complaints.
 
 The notes suggest also configuring /privoxy/ which I did. It didn't help.
 
 There's some suspicion of an =emacs= bug.
 
 ** Additional Software in the Tails Repository is often outdated
-   
+
 | package    | /tor/ version | latest version | notes                       |
 |------------+---------------+----------------+-----------------------------|
 | postgresql |            11 |             14 | no 12, incomplete 13 and 14 |
-| emacs      |            26 |           27.2 |                             |
+| emacs      |          26.1 |           27.2 |                             |
 
 ** /Automatic Software Installation/ popup unreliable
 
@@ -79,25 +79,25 @@ There needs to be a way to initiate that feature manually when it fails.
 All that seems possible is to
 - record which software one has just installed
   - =
-    
+
 ** Tails sometimes freezes
 
-- The GUI still shows 
+- The GUI still shows
 - The mouse and keyboard do nothing
 - There's no obvious way to restart the GUI
       - The Control-Alt-Backspace feature is turned off
       - Killing the X daemon doesn't do it
 
-A bad dotfile can cause the GUI to freeze 
+A bad dotfile can cause the GUI to freeze
 - =.local= was doing that on my system
 
 I pointer still shows, a non-graphical console is probably available.
     - see next section!
- 
+
 *** Linux Non-Graphical Console Access
 
 There seem to be only 2 non-graphical consoles.
- 
+
 | Key Combination | Switches to                    |
 |-----------------+--------------------------------|
 | Control-Alt-F1  | an empty console               |
@@ -108,7 +108,7 @@ There seem to be only 2 non-graphical consoles.
 No console seems to receive system log messages.
 
 **** Best way to safely reboot:
-     
+
 - Control-Alt-F1 to get to the blank console
 - Control-Alt-Delete to reboot from the console
 ** Tails Disables Swap!
