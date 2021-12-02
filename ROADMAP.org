@@ -14,3 +14,40 @@ manage /everything/ with =git=.
 - [[file:Links/HomeLinks/.bash_profile][.bash_profile]]
 - [[file:Links/HomeLinks/.bashrc][.bashrc]]
 - [[file:SW/Config/Bin/restore-dotfiles][restore-dotfiles]]
+
+** TODO Persist PostgreSQL Databases
+
+So far we have all of the required packages installed.
+
+The databases live under
+- =/var/lib/postgresql/11/main/base/=
+and are owned by user =postgres=.
+
+Strategies
+- Have them live somewhere persistent
+    - have Tails restore the link to them
+    - have the link to them baked in
+
+** DONE Get Firefox working with =tor=
+
+see solution in [[file:tails-issues.org][tails-issues.org]]
+
+For any website where one has an account
+- The Tor Browser is a pita
+- Firefox Multi-Account Containers are perfect!
+
+** TODO Get the Tails Gnome Shell up to my standards
+
+I'm used to
+- Some nice customizations
+- Built with the Mint Mate' Desktop
+
+Let's see how much we can replicate such niceness.
+
+** TODO Get Emacs using =tor= comfortably
+
+I spend more time in Emacs than in any other application
+
+** TODO Get an encrypted swapfile!
+
+I need a cushion when I use lots of processes!
