@@ -13,7 +13,7 @@ Given the available USB Thumbdrives
 there is no reason why a Gnu/Linux environment living on such can't be
 every bit as good as a normally installed Gnu/Linux environment.
 
-Alas, [[file::tails-issues.org][Tails presents obstacles]] for using it this way.
+Alas, [[file:tails-issues.org][Tails presents obstacles]] for using it this way.
 
 This project is an attempt to overcome these obstacles!
 
