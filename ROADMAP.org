@@ -40,7 +40,7 @@ For any website where one has an account
 
 I'm used to
 - Some nice customizations
-- Built with the Mint Mate' Desktop
+- Built with the Mint Maté Desktop
 
 Let's see how much we can replicate such niceness.
 
