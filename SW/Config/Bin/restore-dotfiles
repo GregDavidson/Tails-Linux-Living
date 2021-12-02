@@ -1,0 +1,16 @@
+#!/bin/bash
+prog="${0##*/}"
+links=~/Persistent/Links
+home_links="$links/HomeLinks"
+common_links="$links/CommonLinks"
+desktop_links="$links/DesktopLinks"
+
+# Warning: Quick and Fragile!!!
+
+cd
+tar -cf - -C "$home_links" . | tar -xkf - 2>/dev/null
+tar -cf - -C "$common_links" . | tar -xkf - 2>/dev/null
+
+cd Desktop
+tar -cf - -C "$desktop_links" . | tar -xkf - 2>/dev/null
+tar -cf - -C "$common_links" . | tar -xkf - 2>/dev/null
